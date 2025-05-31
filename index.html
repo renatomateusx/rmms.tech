@@ -1,27 +1,255 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RMMS - Portfólio</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    <title>Renato Santos | Cloud Architect e Consultor Especializado em GCP</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <iframe src="portfolio.pdf" frameborder="0"></iframe>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2>Renato Santos</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre" class="nav-link" data-pt="Sobre" data-en="About">Sobre</a></li>
+                    <li><a href="#experiencia" class="nav-link" data-pt="Experiência" data-en="Experience">Experiência</a></li>
+                    <li><a href="#solucoes" class="nav-link" data-pt="Soluções" data-en="Solutions">Soluções</a></li>
+                    <li><a href="#casos" class="nav-link" data-pt="Casos de Sucesso" data-en="Success Cases">Casos de Sucesso</a></li>
+                    <li><a href="#contato" class="nav-link" data-pt="Contato" data-en="Contact">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button class="lang-btn" data-lang="pt-BR"><img src="images/brazil.png" alt="Português" class="flag-icon"></button>
+                <button class="lang-btn" data-lang="en-US"><img src="images/usa.png" alt="English" class="flag-icon"></button>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="headline" data-pt="Transforme sua Infraestrutura de TI com Consultoria Cloud Especializada" data-en="Transform Your IT Infrastructure with Specialized Cloud Consulting">Transforme sua Infraestrutura de TI com Consultoria Cloud Especializada</h1>
+            <p class="subheadline" data-pt="Soluções estratégicas em GCP e ambientes multicloud que entregam escalabilidade, resiliência e alta performance para sistemas críticos" data-en="Strategic solutions in GCP and multicloud environments delivering scalability, resilience, and high performance for critical systems">Soluções estratégicas em GCP e ambientes multicloud que entregam escalabilidade, resiliência e alta performance para sistemas críticos</p>
+            <a href="#calendly" class="cta-button" data-pt="Vamos conversar sobre seu desafio?" data-en="Let's talk about your challenge?">Vamos conversar sobre seu desafio?</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2 data-pt="Sobre Renato Santos" data-en="About Renato Santos">Sobre Renato Santos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-pt="Com mais de 15 anos de experiência transformando a infraestrutura tecnológica de empresas líderes de mercado, eu, Renato Santos, combino profundo conhecimento técnico com visão estratégica de negócios." data-en="With over 15 years of experience transforming the technological infrastructure of market-leading companies, I, Renato Santos, combine deep technical knowledge with strategic business vision.">Com mais de 15 anos de experiência transformando a infraestrutura tecnológica de empresas líderes de mercado, eu, Renato Santos, combino profundo conhecimento técnico com visão estratégica de negócios.</p>
+                    
+                    <p data-pt="Sou Cloud Architect e Consultor Especializado em GCP, com forte atuação em ambientes multicloud. Entrego soluções escaláveis, resilientes e de alta performance para empresas que lidam com sistemas críticos." data-en="I am a Cloud Architect and Consultant Specialized in GCP, with strong expertise in multicloud environments. I deliver scalable, resilient, and high-performance solutions for companies dealing with critical systems.">Sou Cloud Architect e Consultor Especializado em GCP, com forte atuação em ambientes multicloud. Entrego soluções escaláveis, resilientes e de alta performance para empresas que lidam com sistemas críticos.</p>
+                    
+                    <p data-pt="O que me diferencia é minha capacidade de traduzir tecnologia complexa em valor real para o negócio. Trabalho como parceiro estratégico, compreendendo profundamente seus desafios e objetivos para entregar soluções que realmente impactam seus resultados." data-en="What sets me apart is my ability to translate complex technology into real business value. I work as a strategic partner, deeply understanding your challenges and objectives to deliver solutions that truly impact your results.">O que me diferencia é minha capacidade de traduzir tecnologia complexa em valor real para o negócio. Trabalho como parceiro estratégico, compreendendo profundamente seus desafios e objetivos para entregar soluções que realmente impactam seus resultados.</p>
+                </div>
+                <div class="about-image">
+                    <div class="profile-photo-container">
+                        <div class="profile-photo-placeholder">
+                            <img src="images/renato2.jpg" alt="Renato Santos">
+                            <p>Foto de Renato Santos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="experience">
+        <div class="container">
+            <h2 data-pt="Minha Experiência" data-en="My Experience">Minha Experiência</h2>
+            <div class="experience-content">
+                <p data-pt="Ao longo da minha carreira, tenho liderado projetos de transformação digital em empresas de diversos setores, sempre com foco em:" data-en="Throughout my career, I have led digital transformation projects in companies across various sectors, always focusing on:">Ao longo da minha carreira, tenho liderado projetos de transformação digital em empresas de diversos setores, sempre com foco em:</p>
+                
+                <ul class="experience-list">
+                    <li data-pt="Arquitetura de soluções cloud-native com ênfase em GCP" data-en="Cloud-native solution architecture with emphasis on GCP">Arquitetura de soluções cloud-native com ênfase em GCP</li>
+                    <li data-pt="Implementação de estratégias multicloud eficientes" data-en="Implementation of efficient multicloud strategies">Implementação de estratégias multicloud eficientes</li>
+                    <li data-pt="Otimização de performance e custos em ambientes cloud" data-en="Optimization of performance and costs in cloud environments">Otimização de performance e custos em ambientes cloud</li>
+                    <li data-pt="Automação de infraestrutura e processos de DevOps" data-en="Infrastructure automation and DevOps processes">Automação de infraestrutura e processos de DevOps</li>
+                    <li data-pt="Desenho de sistemas resilientes para aplicações críticas" data-en="Design of resilient systems for critical applications">Desenho de sistemas resilientes para aplicações críticas</li>
+                </ul>
+                
+                <p data-pt="Trabalho diretamente com CTOs, CIOs e times de engenharia para garantir que as soluções técnicas estejam perfeitamente alinhadas aos objetivos estratégicos do negócio." data-en="I work directly with CTOs, CIOs, and engineering teams to ensure that technical solutions are perfectly aligned with strategic business objectives.">Trabalho diretamente com CTOs, CIOs e times de engenharia para garantir que as soluções técnicas estejam perfeitamente alinhadas aos objetivos estratégicos do negócio.</p>
+                
+                <div class="expertise-box">
+                    <div class="expertise-item">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud</h3>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fab fa-google"></i>
+                        <h3>GCP</h3>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>DevOps</h3>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-server"></i>
+                        <h3>Multicloud</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="solutions">
+        <div class="container">
+            <h2 data-pt="Soluções" data-en="Solutions">Soluções</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 data-pt="Arquitetura Cloud Especializada em GCP" data-en="Specialized GCP Cloud Architecture">Arquitetura Cloud Especializada em GCP</h3>
+                    <p data-pt="Transforme sua infraestrutura com arquiteturas GCP otimizadas para performance e escalabilidade. Desenvolvo soluções personalizadas que reduzem custos operacionais em até 40%, eliminam a necessidade de grandes investimentos em hardware e garantem a escalabilidade necessária para acompanhar o crescimento do seu negócio." data-en="Transform your infrastructure with GCP architectures optimized for performance and scalability. I develop customized solutions that reduce operational costs by up to 40%, eliminate the need for large hardware investments, and ensure the scalability needed to keep pace with your business growth.">Transforme sua infraestrutura com arquiteturas GCP otimizadas para performance e escalabilidade. Desenvolvo soluções personalizadas que reduzem custos operacionais em até 40%, eliminam a necessidade de grandes investimentos em hardware e garantem a escalabilidade necessária para acompanhar o crescimento do seu negócio.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 data-pt="Estratégia Multicloud" data-en="Multicloud Strategy">Estratégia Multicloud</h3>
+                    <p data-pt="Maximize o retorno do seu investimento em cloud com arquiteturas otimizadas que aproveitam o melhor de cada plataforma. Minhas soluções garantem que você utilize apenas os recursos necessários, com monitoramento constante para identificar oportunidades de otimização de performance e custos." data-en="Maximize the return on your cloud investment with optimized architectures that leverage the best of each platform. My solutions ensure you only use necessary resources, with constant monitoring to identify opportunities for performance and cost optimization.">Maximize o retorno do seu investimento em cloud com arquiteturas otimizadas que aproveitam o melhor de cada plataforma. Minhas soluções garantem que você utilize apenas os recursos necessários, com monitoramento constante para identificar oportunidades de otimização de performance e custos.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 data-pt="Automação e DevOps" data-en="Automation and DevOps">Automação e DevOps</h3>
+                    <p data-pt="Acelere o lançamento de produtos e serviços com minha implementação de práticas DevOps. Automatizo processos manuais, reduzo erros humanos e crio pipelines de entrega contínua que permitem que sua equipe se concentre na inovação em vez de tarefas repetitivas." data-en="Accelerate the launch of products and services with my implementation of DevOps practices. I automate manual processes, reduce human errors, and create continuous delivery pipelines that allow your team to focus on innovation rather than repetitive tasks.">Acelere o lançamento de produtos e serviços com minha implementação de práticas DevOps. Automatizo processos manuais, reduzo erros humanos e crio pipelines de entrega contínua que permitem que sua equipe se concentre na inovação em vez de tarefas repetitivas.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 data-pt="Migração Estratégica para Cloud" data-en="Strategic Cloud Migration">Migração Estratégica para Cloud</h3>
+                    <p data-pt="Conduzo migrações planejadas e seguras para ambientes cloud, com foco em GCP. Minha abordagem metodológica garante transições sem interrupções, preservando a integridade dos dados e otimizando a arquitetura para o novo ambiente." data-en="I conduct planned and secure migrations to cloud environments, focusing on GCP. My methodical approach ensures transitions without interruptions, preserving data integrity and optimizing architecture for the new environment.">Conduzo migrações planejadas e seguras para ambientes cloud, com foco em GCP. Minha abordagem metodológica garante transições sem interrupções, preservando a integridade dos dados e otimizando a arquitetura para o novo ambiente.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 data-pt="Segurança e Conformidade" data-en="Security and Compliance">Segurança e Conformidade</h3>
+                    <p data-pt="Protejo seus dados e aplicações com minha abordagem abrangente de segurança em nuvem. Implemento as melhores práticas do mercado, garanto conformidade com regulamentações específicas do seu setor e crio ambientes resilientes contra ameaças modernas." data-en="I protect your data and applications with my comprehensive cloud security approach. I implement market best practices, ensure compliance with regulations specific to your industry, and create environments resilient against modern threats.">Protejo seus dados e aplicações com minha abordagem abrangente de segurança em nuvem. Implemento as melhores práticas do mercado, garanto conformidade com regulamentações específicas do seu setor e crio ambientes resilientes contra ameaças modernas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="casos" class="success-cases">
+        <div class="container">
+            <h2 data-pt="Casos de Sucesso" data-en="Success Cases">Casos de Sucesso</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-logo">
+                        <img src="images/fintech.png" alt="Fintech" class="company-logo">
+                    </div>
+                    <p data-pt="Liderei a implementação de uma arquitetura GCP que permitiu escalar operações de processamento de pagamentos de 10 mil para 1 milhão de transações diárias, mantendo latência abaixo de 100ms e disponibilidade de 99,99%, resultando em crescimento de 300% em 18 meses sem incidentes críticos." data-en="I led the implementation of a GCP architecture that allowed scaling payment processing operations from 10,000 to 1 million daily transactions, maintaining latency below 100ms and 99.99% availability, resulting in 300% growth in 18 months without critical incidents.">Liderei a implementação de uma arquitetura GCP que permitiu escalar operações de processamento de pagamentos de 10 mil para 1 milhão de transações diárias, mantendo latência abaixo de 100ms e disponibilidade de 99,99%, resultando em crescimento de 300% em 18 meses sem incidentes críticos.</p>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-logo">
+                        <img src="images/retail-chain.png" alt="Varejista Nacional" class="company-logo">
+                    </div>
+                    <p data-pt="Projetei e implementei uma estratégia multicloud que reduziu custos de infraestrutura em 35% e aumentou a velocidade de processamento de dados em 60%, permitindo análises de mercado em tempo real para tomada de decisões estratégicas durante picos sazonais de demanda." data-en="I designed and implemented a multicloud strategy that reduced infrastructure costs by 35% and increased data processing speed by 60%, enabling real-time market analysis for strategic decision-making during seasonal demand peaks.">Projetei e implementei uma estratégia multicloud que reduziu custos de infraestrutura em 35% e aumentou a velocidade de processamento de dados em 60%, permitindo análises de mercado em tempo real para tomada de decisões estratégicas durante picos sazonais de demanda.</p>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-logo">
+                        <img src="images/healthcare.png" alt="Empresa de Saúde" class="company-logo">
+                    </div>
+                    <p data-pt="Desenvolvi uma arquitetura cloud-native no GCP para sistemas críticos de gestão hospitalar, garantindo conformidade com LGPD e regulamentações do setor de saúde, com zero vazamentos de dados e disponibilidade de 99,99% mesmo durante manutenções." data-en="I developed a cloud-native architecture in GCP for critical hospital management systems, ensuring compliance with data protection regulations and healthcare industry standards, with zero data breaches and 99.99% availability even during maintenance.">Desenvolvi uma arquitetura cloud-native no GCP para sistemas críticos de gestão hospitalar, garantindo conformidade com LGPD e regulamentações do setor de saúde, com zero vazamentos de dados e disponibilidade de 99,99% mesmo durante manutenções.</p>
+                </div>
+                
+                <div class="case-card">
+                    <div class="case-logo">
+                        <img src="images/saas.png" alt="Plataforma SaaS B2B" class="company-logo">
+                    </div>
+                    <p data-pt="Implementei uma estratégia de migração para GCP que permitiu escalar operações durante picos de demanda sem comprometer o desempenho, resultando em aumento de 28% na retenção de clientes e redução de 40% no tempo de resposta das aplicações." data-en="I implemented a GCP migration strategy that allowed scaling operations during demand peaks without compromising performance, resulting in a 28% increase in customer retention and a 40% reduction in application response time.">Implementei uma estratégia de migração para GCP que permitiu escalar operações durante picos de demanda sem comprometer o desempenho, resultando em aumento de 28% na retenção de clientes e redução de 40% no tempo de resposta das aplicações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 data-pt="Vamos Conversar" data-en="Let's Talk">Vamos Conversar</h2>
+            <p class="contact-intro" data-pt="Pronto para transformar sua infraestrutura de TI em uma vantagem competitiva para seu negócio? Agende uma consulta estratégica gratuita de 30 minutos para discutirmos seus desafios específicos e como posso ajudar." data-en="Ready to transform your IT infrastructure into a competitive advantage for your business? Schedule a free 30-minute strategic consultation to discuss your specific challenges and how I can help.">Pronto para transformar sua infraestrutura de TI em uma vantagem competitiva para seu negócio? Agende uma consulta estratégica gratuita de 30 minutos para discutirmos seus desafios específicos e como posso ajudar.</p>
+            
+            <div class="contact-info">
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p class="email" data-pt="renato@rmms.tech" data-en="renato@rmms.tech">renato@rmms.tech</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p class="phone" data-pt="+55 (71) 99130-6561" data-en="+55 (71) 99130-6561">+55 (71) 99130-6561</p>
+                    </div>
+                </div>
+                
+                <div id="calendly" class="calendly-container">
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/renatomateusx/strategic-consultant" style="min-width:320px;height:630px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Renato Santos</h2>
+                </div>
+                <div class="footer-links">
+                    <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+                    <a href="#experiencia" data-pt="Experiência" data-en="Experience">Experiência</a>
+                    <a href="#solucoes" data-pt="Soluções" data-en="Solutions">Soluções</a>
+                    <a href="#casos" data-pt="Casos de Sucesso" data-en="Success Cases">Casos de Sucesso</a>
+                    <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+                </div>
+                <div class="footer-cta">
+                    <a href="#calendly" class="cta-button" data-pt="Agende um Papo Comigo" data-en="Schedule a Chat with Me">Agende um Papo Comigo</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Renato Santos. <span data-pt="Todos os direitos reservados." data-en="All rights reserved.">Todos os direitos reservados.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Whatsapp Float -->
+    <a href="https://wa.me/5571991306561" 
+        class="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        <img src="images/whatsapp.png" alt="Talk to me onWhatsApp">
+    </a>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
