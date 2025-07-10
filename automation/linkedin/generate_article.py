@@ -24,7 +24,7 @@ class GeradorConteudoFinOps:
         if not os.path.exists(config_path):
             # Criar configuração padrão
             config_padrao = {
-                "openai_api_key": "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",
+                "openai_api_key": "sua_chave_openai_aqui",
                 "modelo_gpt": "gpt-4",
                 "topicos_finops_pt": [
                     "Otimização de custos AWS",
