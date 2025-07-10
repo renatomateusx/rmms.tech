@@ -1,0 +1,42 @@
+# Arquivos de configuração sensíveis
+.env
+config/api_keys.json
+
+# Vídeos gerados
+videos/pendentes/*.json
+videos/publicados/*.json
+
+# Assets temporários
+assets/temp/
+assets/generated/
+
+# Logs
+*.log
+logs/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.temp 
