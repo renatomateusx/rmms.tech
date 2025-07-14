@@ -84,6 +84,16 @@ class SistemaPostagemAutomatico:
         for i, post in enumerate(posts, 1):
             data = datetime.fromisoformat(post['data_geracao']).strftime("%d/%m/%Y %H:%M")
             print(f"{i}. ID: {post['id']} | Data: {data}")
+            
+            # Mostrar títulos se disponíveis
+            if 'titulo_pt' in post:
+                print(f"   📝 🇧🇷 PT: {post['titulo_pt']}")
+                print(f"   📝 🇺🇸 EN: {post['titulo_en']}")
+            
+            # Mostrar imagens se disponíveis
+            if 'imagem_pt' in post and post['imagem_pt']:
+                print(f"   🖼️ Imagens: ✅ Geradas")
+            
             print(f"   🇧🇷 PT: {post['artigo_pt'][:80]}...")
             print(f"   🇺🇸 EN: {post['artigo_en'][:80]}...")
             print(f"   🏷️ Palavras-chave PT: {', '.join(post['palavras_chave_pt'][:3])}")
@@ -104,6 +114,18 @@ class SistemaPostagemAutomatico:
         
         print(f"\n📄 ARTIGO COMPLETO - ID: {post_id}")
         print("=" * 60)
+        
+        # Mostrar títulos
+        if 'titulo_pt' in post:
+            print(f"\n📝 TÍTULOS:")
+            print(f"🇧🇷 PT: {post['titulo_pt']}")
+            print(f"🇺🇸 EN: {post['titulo_en']}")
+        
+        # Mostrar imagens
+        if 'imagem_pt' in post and post['imagem_pt']:
+            print(f"\n🖼️ IMAGENS GERADAS:")
+            print(f"🇧🇷 PT: {post['imagem_pt']}")
+            print(f"🇺🇸 EN: {post['imagem_en']}")
         
         print("\n🇧🇷 VERSÃO EM PORTUGUÊS:")
         print("-" * 30)
@@ -154,6 +176,9 @@ def main():
             post_id = sys.argv[2]
             sistema.mostrar_artigo_completo(post_id)
         
+        elif comando == "--stats":
+            sistema.gerador.mostrar_estatisticas_duplicatas()
+        
         elif comando == "--ajuda":
             print("""
 📖 Comandos disponíveis:
@@ -161,11 +186,14 @@ def main():
   python3 main.py --gerar            - Gera conteúdo bilingue manualmente
   python3 main.py --listar           - Lista posts pendentes
   python3 main.py --ver ID           - Mostra artigo completo (ex: --ver abc12345)
+  python3 main.py --stats            - Mostra estatísticas de duplicatas
   python3 main.py --ajuda            - Mostra esta ajuda
 
 🌍 Funcionalidades:
   - Geração automática em português e inglês
-  - Controle de duplicatas por palavras-chave
+  - Geração automática de imagens com DALL-E 3
+  - Casos reais da RMMS Tech com métricas específicas
+  - Controle de duplicatas por palavras-chave (pendentes + publicados)
   - Interface para revisão manual
   - Agendamento semanal (segunda às 9h)
             """)
