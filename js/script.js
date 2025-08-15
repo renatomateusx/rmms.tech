@@ -111,3 +111,46 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+// Function to open Zoho chat
+function openZohoChat() {
+    if (typeof $zoho !== 'undefined' && $zoho.salesiq) {
+        // Try different methods to show the chat
+        if ($zoho.salesiq.floatbutton && $zoho.salesiq.floatbutton.visible) {
+            $zoho.salesiq.floatbutton.visible('show');
+        } else if ($zoho.salesiq.show) {
+            $zoho.salesiq.show();
+        } else if ($zoho.salesiq.open) {
+            $zoho.salesiq.open();
+        } else {
+            // Try to trigger the default Zoho button
+            var zohoButton = document.querySelector('[id*="zsiq"], [class*="zsiq"]');
+            if (zohoButton) {
+                zohoButton.click();
+            } else {
+                showWhatsAppFallback();
+            }
+        }
+    } else {
+        showWhatsAppFallback();
+    }
+}
+
+// Function to show WhatsApp as fallback
+function showWhatsAppFallback() {
+    const whatsappButton = document.querySelector('.whatsapp-float');
+    if (whatsappButton) {
+        whatsappButton.style.display = 'block';
+    }
+}
+
+// Check if Zoho script loaded successfully
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for Zoho to load
+    setTimeout(function() {
+        if (typeof $zoho === 'undefined' || !$zoho.salesiq) {
+            console.log('Zoho not loaded, showing WhatsApp fallback');
+            showWhatsAppFallback();
+        }
+    }, 3000); // Wait 3 seconds for Zoho to load
+});

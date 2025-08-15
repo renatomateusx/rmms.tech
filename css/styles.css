@@ -707,3 +707,33 @@ footer {
     transform: scale(1.1);
   }
   
+  /* Chat Section */
+  .chat-section {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .chat-section:hover {
+    background-color: #e9ecef;
+    transform: translateY(-5px);
+  }
+  
+  .chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .chat-header h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+  }
+  
+  .chat-header p {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  
