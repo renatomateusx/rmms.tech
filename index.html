@@ -67,7 +67,7 @@
                     <li><a href="#casos" class="nav-link" data-pt="Casos de Uso" data-en="Use Cases">Casos de Uso</a></li>
                     <li><a href="#sobre" class="nav-link" data-pt="Sobre" data-en="About">Sobre</a></li>
                     <li><a href="#contato" class="nav-link" data-pt="Contato" data-en="Contact">Contato</a></li>
-                    <li><a href="#suporte" class="nav-link" data-pt="Suporte" data-en="Support">Suporte</a></li>
+                    <li><a href="#suporte" class="nav-link" onclick="zsLoadAutoSuggestions();" data-pt="Suporte" data-en="Support">Suporte</a></li>
                 </ul>
             </nav>
             <div class="language-selector">
@@ -442,13 +442,6 @@
             </div>
         </div>
     </section>
-    
-    <section id="suporte" class="contact">
-        <div class="container">
-            <h2 data-pt="Suporte" data-en="Support">Suporte</h2>
-            <div id="zsfeedbackwidgetdiv"></div>
-        </div>
-    </section>
 
     <section style="background:#111; color:#fff; padding:60px 20px; text-align:center;">
         <div class="container">
@@ -500,7 +493,8 @@
     <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
     <script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq7ff3220c596720bc66015735a1aeb569f71260e058d80916b7ec67e65571f04a" defer></script>
     <!-- Zoho Desk Feedback Widgets -->
-    <script src="https://desk.zoho.com/portal/api/feedbackwidget/1166648000000440689?orgId=895593006&displayType=embeded"></script>
+    <!-- <script src="https://desk.zoho.com/portal/api/feedbackwidget/1166648000000440689?orgId=895593006&displayType=embeded"></script> -->
+    <script src="https://desk.zoho.com/portal/api/feedbackwidget/1166648000000440689?orgId=895593006&displayType=popout"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

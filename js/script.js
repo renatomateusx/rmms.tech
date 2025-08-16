@@ -153,4 +153,20 @@ document.addEventListener('DOMContentLoaded', function() {
             showWhatsAppFallback();
         }
     }, 3000); // Wait 3 seconds for Zoho to load
+    feedBackButton();
 });
+
+// Forçar CSS do botão Zoho após 3 segundos
+setTimeout(function() {
+    feedBackButton();
+}, 3000);
+
+function feedBackButton() {
+    const feedbackSpan = document.getElementById('feedbacklabelspan');
+    if (feedbackSpan) {
+        feedbackSpan.style.backgroundColor = 'transparent';
+        feedbackSpan.style.color = 'transparent';
+        feedbackSpan.style.borderColor = 'transparent';
+        feedbackSpan.style.border = '0px';
+    }
+}

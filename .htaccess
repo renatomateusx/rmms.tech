@@ -130,3 +130,91 @@ RewriteRule ^(.*)$ /index.html [L]
 # Configurações de Logs (opcional)
 # LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
 # CustomLog /var/log/apache2/rmms_cloud_access.log combined 
+
+# Habilitar CORS para recursos externos do Zoho
+<IfModule mod_headers.c>
+    # Headers CORS para permitir recursos do Zoho
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+    Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization, Cache-Control"
+    Header always set Access-Control-Allow-Credentials "true"
+    Header always set Access-Control-Max-Age "86400"
+    
+    # Headers específicos para fontes e recursos estáticos
+    <FilesMatch "\.(woff|woff2|ttf|eot|css|js|png|jpg|jpeg|gif|ico|svg)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, OPTIONS"
+        Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+    </FilesMatch>
+    
+    # Headers de segurança
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Permitir recursos externos e resolver CSP
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Permitir recursos do Zoho
+    RewriteCond %{HTTP_ORIGIN} ^https://(js\.zohostatic\.com|desk\.zoho\.com|salesiq\.zohopublic\.com)$ [NC]
+    RewriteRule ^(.*)$ - [E=HTTP_ORIGIN:%{HTTP_ORIGIN}]
+    
+    # Headers para recursos específicos do Zoho
+    RewriteRule ^.*$ - [E=ZOHO_RESOURCE:1]
+</IfModule>
+
+# Configurações de MIME para fontes
+<IfModule mod_mime.c>
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+    AddType application/x-font-ttf .ttf
+    AddType application/x-font-eot .eot
+    AddType application/vnd.ms-fontobject .eot
+</IfModule>
+
+# Cache para recursos externos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Fontes
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType application/x-font-eot "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    
+    # Recursos estáticos
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# Compressão para melhor performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/font-woff
+    AddOutputFilterByType DEFLATE application/font-woff2
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-font-eot
+</IfModule>
+
+# Resolver problemas de CSP e frame-src
+<IfModule mod_headers.c>
+    # Permitir frames do Zoho
+    Header always set Content-Security-Policy "default-src 'self' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.zoho.com https://*.zohostatic.com https://*.zohopublic.com https://calendly.com; style-src 'self' 'unsafe-inline' https: data:; font-src 'self' data: https:; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://calendly.com https://*.calendly.com https://*.zoho.com https://*.zohostatic.com https://*.zohopublic.com;"
+</IfModule> 
