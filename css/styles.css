@@ -743,3 +743,36 @@ footer {
     border-color: transparent;
     border: 0px !important;
   }
+
+/* Solução alternativa para fontes do Zoho */
+@font-face {
+    font-family: 'LatoLatin-Regular';
+    src: url('https://js.zohostatic.com/support/fbw_v20/fonts/LatoLatin-Regular.woff2') format('woff2');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoLatin-Bold';
+    src: url('https://js.zohostatic.com/support/fbw_v20/fonts/LatoLatin-Bold.woff2') format('woff2');
+    font-display: swap;
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoLatin-Italic';
+    src: url('https://js.zohostatic.com/support/fbw_v20/fonts/LatoLatin-Italic.woff2') format('woff2');
+    font-display: swap;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Aplicar fontes alternativas para elementos do Zoho */
+#zsfeedbackwidgetdiv,
+#advwebForm,
+#zsfeedbkrpanel,
+.zsfeedbkrpanel {
+    font-family: 'LatoLatin-Regular', 'Lato', 'Arial', sans-serif !important;
+}

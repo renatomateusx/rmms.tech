@@ -153,4 +153,90 @@ document.addEventListener('DOMContentLoaded', function() {
             showWhatsAppFallback();
         }
     }, 3000); // Wait 3 seconds for Zoho to load
+    zsfeedbackwidgetdivFunction();
+});
+
+// Forçar CSS do botão Zoho após 3 segundos
+setTimeout(function() {
+    zsfeedbackwidgetdivFunction();
+}, 5000);
+
+function zsfeedbackwidgetdivFunction() {
+    console.log('zsfeedbackwidgetdivFunction');
+    const zsfeedbackwidgetdiv = document.getElementById('zsfeedbackwidgetdiv');
+    console.log(zsfeedbackwidgetdiv);
+    if (zsfeedbackwidgetdiv) {
+        console.log('zsfeedbackwidgetdiv found');
+        zsfeedbackwidgetdiv.style.width = '100%';
+        // CSS responsivo baseado no tamanho da tela
+        if (window.innerWidth <= 768) {
+            // Mobile e tablet
+            zsfeedbackwidgetdiv.style.width = '690px';
+            zsfeedbackwidgetdiv.style.maxWidth = '100%';
+        }
+        
+        if (window.innerWidth <= 576) {
+            // Mobile pequeno
+            zsfeedbackwidgetdiv.style.width = '100%';
+        }
+        
+        if (window.innerWidth <= 480) {
+            // Mobile muito pequeno
+            zsfeedbackwidgetdiv.style.width = '100%';
+            zsfeedbackwidgetdiv.style.fontSize = '12px';
+        }
+    }
+}
+
+// Executar quando a janela carregar completamente
+window.addEventListener('load', function() {
+    hideZohoFeedbackButton();
+    
+    // Executar após delays específicos para garantir que o Zoho carregou
+    setTimeout(hideZohoFeedbackButton, 3000);  // 3 segundos (principal)
+    setTimeout(hideZohoFeedbackButton, 5000);  // 5 segundos (backup)
+    setTimeout(hideZohoFeedbackButton, 10000); // 10 segundos (backup final)
+});
+
+// Solução para problema de CORS com fontes do Zoho
+function loadZohoFonts() {
+    // Lista de fontes do Zoho que podem dar erro CORS
+    const zohoFonts = [
+        'https://js.zohostatic.com/support/fbw_v20/fonts/LatoLatin-Regular.woff2',
+        'https://js.zohostatic.com/support/fbw_v20/fonts/LatoLatin-Bold.woff2',
+        'https://js.zohostatic.com/support/fbw_v20/fonts/LatoLatin-Italic.woff2'
+    ];
+    
+    zohoFonts.forEach(fontUrl => {
+        // Criar link para fonte
+        const fontLink = document.createElement('link');
+        fontLink.rel = 'stylesheet';
+        fontLink.href = fontUrl;
+        fontLink.crossOrigin = 'anonymous';
+        
+        // Adicionar ao head
+        document.head.appendChild(fontLink);
+        
+        // Tratar erro de CORS
+        fontLink.onerror = function() {
+            console.log('Fonte Zoho não carregou:', fontUrl);
+            // Remover link que falhou
+            document.head.removeChild(fontLink);
+        };
+        
+        fontLink.onload = function() {
+            console.log('Fonte Zoho carregada com sucesso:', fontUrl);
+        };
+    });
+}
+
+// Executar solução de fontes após carregamento
+document.addEventListener('DOMContentLoaded', function() {
+    // Aguardar um pouco para o Zoho carregar
+    setTimeout(loadZohoFonts, 2000);
+});
+
+// Executar também no load da janela
+window.addEventListener('load', function() {
+    setTimeout(loadZohoFonts, 1000);
 });
