@@ -776,3 +776,72 @@ footer {
 .zsfeedbkrpanel {
     font-family: 'LatoLatin-Regular', 'Lato', 'Arial', sans-serif !important;
 }
+
+.manfieldbdr { 
+    height: 3em !important;
+    width: 100% !important;
+}
+
+#zohoSupportWebToCase select {  
+    height: 3em !important;
+    width: 97%!important
+}
+
+textarea { 
+    height: 10em !important;
+    width: 100% !important;
+}
+
+.zsFontClass  {
+    color:#000000;
+    font-family:Arial;
+    margin-top: 10px !important;
+    font-size: 15px !important;
+}
+
+.zsFontClass2 {
+    color:#000000;
+    font-family:Arial;
+
+    font-size: 15px !important;
+}
+
+/* Botão principal (Enviar) */
+#zsSubmitButton_1166648000000460196 {
+    background-color: #2563eb;   /* azul */
+    color: white;                /* texto branco */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  #zsSubmitButton_1166648000000460196:hover {
+    background-color: #1d4ed8;   /* azul mais escuro no hover */
+    transform: translateY(-1px); /* leve efeito */
+  }
+  
+  /* Botão secundário (Restaurar) */
+  input[type="button"].zsFontClass {
+    background-color: #e5e7eb;   /* cinza claro */
+    color: #111827;              /* texto escuro */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  input[type="button"].zsFontClass:hover {
+    background-color: #d1d5db;
+  }
+
+  #zohoSupportWebToCase { 
+    width: 100% !important;
+    margin-top: -20px;
+  }
