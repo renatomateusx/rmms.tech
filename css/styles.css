@@ -58,7 +58,17 @@ a:hover {
 }
 
 section {
-    padding: 80px 0;
+    padding: 60px 0; /* Reduzido de 80px para 60px */
+}
+
+/* Reduz ainda mais o espaçamento da seção de soluções */
+.solutions {
+    padding: 50px 0; /* Reduzido de 60px para 50px */
+}
+
+/* Reduz o espaçamento da seção de contato */
+.contact {
+    padding: 50px 0; /* Reduzido de 60px para 50px */
 }
 
 /* Header Styles */
@@ -360,10 +370,12 @@ nav ul li a:hover:after {
     background-color: var(--light-bg);
 }
 
+/* Garante que todos os cards tenham a mesma altura base */
 .solutions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    align-items: start; /* Alinha os cards pelo topo */
 }
 
 .solution-card {
@@ -372,6 +384,8 @@ nav ul li a:hover:after {
     padding: 30px;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .solution-card:hover {
@@ -399,6 +413,118 @@ nav ul li a:hover:after {
     font-size: 1.3rem;
     margin-bottom: 15px;
     color: var(--secondary-color);
+}
+
+.solution-card p {
+    margin-bottom: 15px;
+}
+
+.solution-card .features-list {
+    margin-bottom: 20px;
+}
+
+.solution-card .cta-button {
+    margin-top: auto;
+    align-self: center;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.solution-card .cta-button:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Estilos para cards expansíveis */
+.features-list {
+    position: relative;
+}
+
+.hidden-feature {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.hidden-feature.show {
+    display: list-item;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Remove o efeito de gradiente problemático */
+.solution-card:not(.expanded) .features-list::after {
+    display: none;
+}
+
+.expand-button-container {
+    text-align: center;
+    margin: 15px 0;
+    flex-shrink: 0; /* Evita que o container do botão encolha */
+}
+
+.expand-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.expand-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.expand-btn.expanded {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Animação para expansão dos cards */
+.solution-card.expanded {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    min-height: auto; /* Permite que o card cresça quando expandido */
+    height: auto; /* Altura automática para conteúdo expandido */
+    z-index: 10; /* Garante que o card expandido fique sobre os outros */
+    position: relative;
+}
+
+.solution-card.expanded .features-list {
+    margin-bottom: 25px;
+    min-height: auto; /* Remove restrição de altura mínima quando expandido */
+}
+
+/* Responsividade para cards expansíveis */
+@media (max-width: 768px) {
+    .solution-card.expanded {
+        transform: none;
+    }
+    
+    .expand-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
 }
 
 /* Success Cases Section */
@@ -845,3 +971,76 @@ textarea {
     width: 100% !important;
     margin-top: -20px;
   }
+
+/* Estilos específicos para cards de onboarding */
+.onboarding-card {
+    height: 380px !important; /* Altura menor apenas para cards de onboarding */
+    padding: 25px !important; /* Padding menor apenas para cards de onboarding */
+}
+
+.onboarding-card .solution-icon {
+    width: 60px !important; /* Ícone menor apenas para cards de onboarding */
+    height: 60px !important;
+    margin-bottom: 15px !important;
+}
+
+.onboarding-card .solution-icon i {
+    font-size: 1.5rem !important; /* Ícone menor apenas para cards de onboarding */
+}
+
+.onboarding-card h3 {
+    font-size: 1.2rem !important; /* Título menor apenas para cards de onboarding */
+    margin-bottom: 12px !important;
+}
+
+.onboarding-card p {
+    font-size: 0.95rem !important; /* Texto menor apenas para cards de onboarding */
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+}
+
+.onboarding-card ul {
+    margin: 12px 0 !important;
+}
+
+.onboarding-card li {
+    font-size: 0.9rem !important; /* Itens da lista menores apenas para cards de onboarding */
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
+}
+
+/* Responsividade para cards de onboarding */
+@media (max-width: 768px) {
+    .onboarding-card {
+        height: auto !important;
+        min-height: 350px !important;
+    }
+}
+
+/* Estilos simples para cards de onboarding */
+.onboarding-card {
+    height: 350px;
+    padding: 25px;
+}
+
+.onboarding-card .solution-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.onboarding-card .solution-icon i {
+    font-size: 1.5rem;
+}
+
+.onboarding-card h3 {
+    font-size: 1.2rem;
+}
+
+.onboarding-card p {
+    font-size: 0.95rem;
+}
+
+.onboarding-card li {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}

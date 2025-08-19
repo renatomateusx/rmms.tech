@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update Calendly URL based on language
     updateCalendlyUrl(currentLang);
+    
+    // Inicializa os cards expansíveis
+    initializeExpandableCards();
 });
 
 // Function to set language
@@ -80,6 +83,18 @@ function setLanguage(lang) {
     
     // Update Calendly URL
     updateCalendlyUrl(lang);
+    
+    // Update expand button texts based on current state
+    updateAllExpandButtonTexts();
+}
+
+function updateAllExpandButtonTexts() {
+    const expandButtons = document.querySelectorAll('.expand-btn');
+    expandButtons.forEach(button => {
+        const card = button.closest('.solution-card');
+        const isExpanded = card.classList.contains('expanded');
+        updateButtonText(button, isExpanded);
+    });
 }
 
 // Function to update Calendly URL based on language
@@ -99,6 +114,81 @@ function updateCalendlyUrl(lang) {
                 utm: {}
             });
         }
+    }
+}
+
+// Funcionalidade dos cards expansíveis
+function initializeExpandableCards() {
+    const expandButtons = document.querySelectorAll('.expand-btn');
+    let currentlyExpandedCard = null;
+
+    expandButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.solution-card');
+            const cardId = card.dataset.cardId;
+            const featuresList = card.querySelector('.features-list');
+            const hiddenFeatures = card.querySelectorAll('.hidden-feature');
+            
+            // Se este card já está expandido, contrai
+            if (card.classList.contains('expanded')) {
+                contractCard(card, hiddenFeatures);
+                this.classList.remove('expanded');
+                currentlyExpandedCard = null;
+            } else {
+                // Se há outro card expandido, contrai primeiro
+                if (currentlyExpandedCard && currentlyExpandedCard !== card) {
+                    const otherButton = currentlyExpandedCard.querySelector('.expand-btn');
+                    const otherHiddenFeatures = currentlyExpandedCard.querySelectorAll('.hidden-feature');
+                    contractCard(currentlyExpandedCard, otherHiddenFeatures);
+                    otherButton.classList.remove('expanded');
+                }
+                
+                // Expande este card
+                expandCard(card, hiddenFeatures);
+                this.classList.add('expanded');
+                currentlyExpandedCard = card;
+            }
+        });
+    });
+}
+
+function expandCard(card, hiddenFeatures) {
+    card.classList.add('expanded');
+    
+    // Atualiza o texto do botão
+    const button = card.querySelector('.expand-btn');
+    updateButtonText(button, true);
+    
+    // Mostra os itens ocultos com animação
+    hiddenFeatures.forEach((feature, index) => {
+        setTimeout(() => {
+            feature.classList.add('show');
+        }, index * 100); // Delay escalonado para efeito cascata
+    });
+}
+
+function contractCard(card, hiddenFeatures) {
+    card.classList.remove('expanded');
+    
+    // Atualiza o texto do botão
+    const button = card.querySelector('.expand-btn');
+    updateButtonText(button, false);
+    
+    // Esconde os itens ocultos
+    hiddenFeatures.forEach(feature => {
+        feature.classList.remove('show');
+    });
+}
+
+function updateButtonText(button, isExpanded) {
+    const currentLang = document.documentElement.lang.startsWith('pt') ? 'pt' : 'en';
+    
+    if (isExpanded) {
+        const text = currentLang === 'pt' ? button.dataset.ptExpanded : button.dataset.enExpanded;
+        button.textContent = text;
+    } else {
+        const text = currentLang === 'pt' ? button.dataset.pt : button.dataset.en;
+        button.textContent = text;
     }
 }
 

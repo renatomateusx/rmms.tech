@@ -303,75 +303,93 @@
             <h2 data-pt="Soluções e Serviços" data-en="Solutions and Services">Soluções e Serviços</h2>
             <p style="text-align: center; margin-bottom: 30px; color: #666; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;" data-pt="Nossas soluções são personalizadas de acordo com as necessidades específicas de cada organização. Entre em contato para um orçamento personalizado." data-en="Our solutions are customized according to the specific needs of each organization. Contact us for a personalized quote.">Nossas soluções são personalizadas de acordo com as necessidades específicas de cada organização. Entre em contato para um orçamento personalizado.</p>
             <div class="solutions-grid">
-                <div class="solution-card">
+                <div class="solution-card" data-card-id="1">
                     <div class="solution-icon">
                         <i class="fas fa-rocket" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="Essencial CloudOps" data-en="Essential CloudOps">Essencial CloudOps</h3>
                     <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px; font-style: italic;" data-pt="Valor personalizado conforme escopo" data-en="Custom value based on scope">Valor personalizado conforme escopo</p>
                     <p data-pt="Automação básica de infraestrutura e implementação de pipelines simples para pequenas equipes." data-en="Basic infrastructure automation and simple pipeline implementation for small teams.">Automação básica de infraestrutura e implementação de pipelines simples para pequenas equipes.</p>
-                    <ul style="text-align: left; margin: 20px 0;">
+                    <ul class="features-list" style="text-align: left; margin: 20px 0;">
                         <li data-pt="Automação de infraestrutura básica" data-en="Basic infrastructure automation">Automação de infraestrutura básica</li>
                         <li data-pt="Pipelines simples baseados em Jira" data-en="Simple Jira-based pipelines">Pipelines simples baseados em Jira</li>
                         <li data-pt="Integração Jira + Git básica" data-en="Basic Jira + Git integration">Integração Jira + Git básica</li>
-                        <li data-pt="Suporte por 30 dias" data-en="30-day support">Suporte por 30 dias</li>
+                        <li class="hidden-feature" data-pt="Suporte por 30 dias" data-en="30-day support">Suporte por 30 dias</li>
+                        <li class="hidden-feature" data-pt="Configuração inicial" data-en="Initial setup">Configuração inicial</li>
                     </ul>
+                    <div class="expand-button-container">
+                        <button class="expand-btn" data-pt="Ver mais" data-en="See more" data-pt-expanded="Ver menos" data-en-expanded="See less">Ver mais</button>
+                    </div>
                     <a href="#contato" class="cta-button" style="margin-top: 20px; display: inline-block;" data-pt="Solicitar Orçamento" data-en="Request Quote">Solicitar Orçamento</a>
                 </div>
                 
-                <div class="solution-card">
+                <div class="solution-card" data-card-id="2">
                     <div class="solution-icon">
                         <i class="fas fa-chart-line" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="Automação Ágil" data-en="Agile Automation">Automação Ágil</h3>
                     <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px; font-style: italic;" data-pt="Valor personalizado conforme escopo" data-en="Custom value based on scope">Valor personalizado conforme escopo</p>
                     <p data-pt="Automação avançada com agentes inteligentes e pipelines complexos para equipes médias." data-en="Advanced automation with intelligent agents and complex pipelines for medium teams.">Automação avançada com agentes inteligentes e pipelines complexos para equipes médias.</p>
-                    <ul style="text-align: left; margin: 20px 0;">
+                    <ul class="features-list" style="text-align: left; margin: 20px 0;">
                         <li data-pt="Automação avançada de infraestrutura" data-en="Advanced infrastructure automation">Automação avançada de infraestrutura</li>
                         <li data-pt="Agentes inteligentes para Jira + Git" data-en="Intelligent agents for Jira + Git">Agentes inteligentes para Jira + Git</li>
                         <li data-pt="Pipelines complexos e customizados" data-en="Complex and customized pipelines">Pipelines complexos e customizados</li>
-                        <li data-pt="Monitoramento e alertas" data-en="Monitoring and alerts">Monitoramento e alertas</li>
-                        <li data-pt="Suporte por 90 dias" data-en="90-day support">Suporte por 90 dias</li>
-                        <li data-pt="Treinamento da equipe" data-en="Team training">Treinamento da equipe</li>
+                        <li class="hidden-feature" data-pt="Monitoramento e alertas" data-en="Monitoring and alerts">Monitoramento e alertas</li>
+                        <li class="hidden-feature" data-pt="Suporte por 90 dias" data-en="90-day support">Suporte por 90 dias</li>
+                        <li class="hidden-feature" data-pt="Treinamento da equipe" data-en="Team training">Treinamento da equipe</li>
+                        <li class="hidden-feature" data-pt="Análise de performance" data-en="Performance analysis">Análise de performance</li>
                     </ul>
+                    <div class="expand-button-container">
+                        <button class="expand-btn" data-pt="Ver mais" data-en="See more" data-pt-expanded="Ver menos" data-en-expanded="See less">Ver mais</button>
+                    </div>
                     <a href="#contato" class="cta-button" style="margin-top: 20px; display: inline-block;" data-pt="Solicitar Orçamento" data-en="Request Quote">Solicitar Orçamento</a>
                 </div>
 
-                <div class="solution-card">
+                <div class="solution-card" data-card-id="3">
                     <div class="solution-icon">
                         <i class="fas fa-crown" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="Excelência DevOps & SRE" data-en="DevOps & SRE Excellence">Excelência DevOps & SRE</h3>
                     <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px; font-style: italic;" data-pt="Valor personalizado conforme escopo" data-en="Custom value based on scope">Valor personalizado conforme escopo</p>
                     <p data-pt="Solução completa com automação total, agentes inteligentes avançados e suporte dedicado para grandes organizações." data-en="Complete solution with total automation, advanced intelligent agents and dedicated support for large organizations.">Solução completa com automação total, agentes inteligentes avançados e suporte dedicado para grandes organizações.</p>
-                    <ul style="text-align: left; margin: 20px 0;">
+                    <ul class="features-list" style="text-align: left; margin: 20px 0;">
                         <li data-pt="Automação total de infraestrutura" data-en="Total infrastructure automation">Automação total de infraestrutura</li>
                         <li data-pt="Agentes inteligentes avançados" data-en="Advanced intelligent agents">Agentes inteligentes avançados</li>
                         <li data-pt="Pipelines enterprise customizados" data-en="Customized enterprise pipelines">Pipelines enterprise customizados</li>
-                        <li data-pt="Suporte dedicado 24/7" data-en="24/7 dedicated support">Suporte dedicado 24/7</li>
-                        <li data-pt="Consultoria estratégica contínua" data-en="Continuous strategic consulting">Consultoria estratégica contínua</li>
-                        <li data-pt="Roadmap de evolução" data-en="Evolution roadmap">Roadmap de evolução</li>
+                        <li class="hidden-feature" data-pt="Suporte dedicado 24/7" data-en="24/7 dedicated support">Suporte dedicado 24/7</li>
+                        <li class="hidden-feature" data-pt="Consultoria estratégica contínua" data-en="Continuous strategic consulting">Consultoria estratégica contínua</li>
+                        <li class="hidden-feature" data-pt="Roadmap de evolução" data-en="Evolution roadmap">Roadmap de evolução</li>
+                        <li class="hidden-feature" data-pt="Gestão de incidentes" data-en="Incident management">Gestão de incidentes</li>
+                        <li class="hidden-feature" data-pt="Relatórios executivos" data-en="Executive reports">Relatórios executivos</li>
                     </ul>
+                    <div class="expand-button-container">
+                        <button class="expand-btn" data-pt="Ver mais" data-en="See more" data-pt-expanded="Ver menos" data-en-expanded="See less">Ver mais</button>
+                    </div>
                     <a href="#contato" class="cta-button" style="margin-top: 20px; display: inline-block;" data-pt="Falar com Especialista" data-en="Talk to Specialist">Falar com Especialista</a>
                 </div>
 
-                <div class="solution-card">
+                <div class="solution-card" data-card-id="4">
                     <div class="solution-icon">
                         <i class="fas fa-gem" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="Diamante Enterprise" data-en="Diamond Enterprise">Diamante Enterprise</h3>
                     <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px; font-style: italic;" data-pt="Valor personalizado conforme escopo" data-en="Custom value based on scope">Valor personalizado conforme escopo</p>
                     <p data-pt="Solução enterprise premium com automação total, agentes inteligentes de última geração e suporte VIP para grandes corporações." data-en="Premium enterprise solution with total automation, next-generation intelligent agents and VIP support for large corporations.">Solução enterprise premium com automação total, agentes inteligentes de última geração e suporte VIP para grandes corporações.</p>
-                    <ul style="text-align: left; margin: 20px 0;">
+                    <ul class="features-list" style="text-align: left; margin: 20px 0;">
                         <li data-pt="Automação total de infraestrutura enterprise" data-en="Total enterprise infrastructure automation">Automação total de infraestrutura enterprise</li>
                         <li data-pt="Agentes inteligentes de última geração" data-en="Next-generation intelligent agents">Agentes inteligentes de última geração</li>
                         <li data-pt="Pipelines enterprise ultra-customizados" data-en="Ultra-customized enterprise pipelines">Pipelines enterprise ultra-customizados</li>
-                        <li data-pt="Suporte VIP 24/7 com SLA premium" data-en="24/7 VIP support with premium SLA">Suporte VIP 24/7 com SLA premium</li>
-                        <li data-pt="Consultoria estratégica executiva" data-en="Executive strategic consulting">Consultoria estratégica executiva</li>
-                        <li data-pt="Roadmap de evolução personalizado" data-en="Customized evolution roadmap">Roadmap de evolução personalizado</li>
-                        <li data-pt="Gerente de conta dedicado" data-en="Dedicated account manager">Gerente de conta dedicado</li>
-                        <li data-pt="Implementação prioritária" data-en="Priority implementation">Implementação prioritária</li>
+                        <li class="hidden-feature" data-pt="Suporte VIP 24/7 com SLA premium" data-en="24/7 VIP support with premium SLA">Suporte VIP 24/7 com SLA premium</li>
+                        <li class="hidden-feature" data-pt="Consultoria estratégica executiva" data-en="Executive strategic consulting">Consultoria estratégica executiva</li>
+                        <li class="hidden-feature" data-pt="Roadmap de evolução personalizado" data-en="Customized evolution roadmap">Roadmap de evolução personalizado</li>
+                        <li class="hidden-feature" data-pt="Gerente de conta dedicado" data-en="Dedicated account manager">Gerente de conta dedicado</li>
+                        <li class="hidden-feature" data-pt="Implementação prioritária" data-en="Priority implementation">Implementação prioritária</li>
+                        <li class="hidden-feature" data-pt="SLA garantido" data-en="Guaranteed SLA">SLA garantido</li>
+                        <li class="hidden-feature" data-pt="Suporte presencial" data-en="On-site support">Suporte presencial</li>
                     </ul>
+                    <div class="expand-button-container">
+                        <button class="expand-btn" data-pt="Ver mais" data-en="See more" data-pt-expanded="Ver menos" data-en-expanded="See less">Ver mais</button>
+                    </div>
                     <a href="#contato" class="cta-button" style="margin-top: 20px; display: inline-block;" data-pt="Falar com Executivo" data-en="Talk to Executive">Falar com Executivo</a>
                 </div>
             </div>
@@ -382,33 +400,57 @@
         <div class="container">
             <h2 data-pt="Processo de Onboarding" data-en="Onboarding Process">Processo de Onboarding</h2>
             <div class="solutions-grid">
-                <div class="solution-card">
+                <div class="solution-card onboarding-card">
                     <div class="solution-icon">
                         <i class="fas fa-search" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="1. Diagnóstico" data-en="1. Diagnosis">1. Diagnóstico</h3>
                     <p data-pt="Análise completa da infraestrutura atual, identificação de gargalos e oportunidades de automação." data-en="Complete analysis of current infrastructure, identification of bottlenecks and automation opportunities.">Análise completa da infraestrutura atual, identificação de gargalos e oportunidades de automação.</p>
+                    <ul style="text-align: left; margin: 15px 0; color: #666; font-size: 0.95rem;">
+                        <li data-pt="Avaliação da infraestrutura existente" data-en="Assessment of existing infrastructure">Avaliação da infraestrutura existente</li>
+                        <li data-pt="Identificação de gargalos operacionais" data-en="Identification of operational bottlenecks">Identificação de gargalos operacionais</li>
+                        <li data-pt="Mapeamento de processos atuais" data-en="Mapping of current processes">Mapeamento de processos atuais</li>
+                        <li data-pt="Relatório detalhado com recomendações" data-en="Detailed report with recommendations">Relatório detalhado com recomendações</li>
+                    </ul>
                 </div>
-                <div class="solution-card">
+                <div class="solution-card onboarding-card">
                     <div class="solution-icon">
                         <i class="fas fa-cogs" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="2. Implementação" data-en="2. Implementation">2. Implementação</h3>
                     <p data-pt="Desenvolvimento e implementação das automações, pipelines e agentes inteligentes customizados." data-en="Development and implementation of custom automations, pipelines and intelligent agents.">Desenvolvimento e implementação das automações, pipelines e agentes inteligentes customizados.</p>
+                    <ul style="text-align: left; margin: 15px 0; color: #666; font-size: 0.95rem;">
+                        <li data-pt="Desenvolvimento de automações personalizadas" data-en="Development of custom automations">Desenvolvimento de automações personalizadas</li>
+                        <li data-pt="Configuração de pipelines CI/CD" data-en="CI/CD pipeline configuration">Configuração de pipelines CI/CD</li>
+                        <li data-pt="Implementação de agentes inteligentes" data-en="Implementation of intelligent agents">Implementação de agentes inteligentes</li>
+                        <li data-pt="Testes e validação completa" data-en="Complete testing and validation">Testes e validação completa</li>
+                    </ul>
                 </div>
-                <div class="solution-card">
+                <div class="solution-card onboarding-card">
                     <div class="solution-icon">
                         <i class="fas fa-graduation-cap" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="3. Treinamento" data-en="3. Training">3. Treinamento</h3>
                     <p data-pt="Capacitação da equipe para operar e manter as automações implementadas." data-en="Team training to operate and maintain implemented automations.">Capacitação da equipe para operar e manter as automações implementadas.</p>
+                    <ul style="text-align: left; margin: 15px 0; color: #666; font-size: 0.95rem;">
+                        <li data-pt="Treinamento prático da equipe" data-en="Hands-on team training">Treinamento prático da equipe</li>
+                        <li data-pt="Documentação completa dos processos" data-en="Complete process documentation">Documentação completa dos processos</li>
+                        <li data-pt="Capacitação em monitoramento" data-en="Monitoring training">Capacitação em monitoramento</li>
+                        <li data-pt="Suporte durante a transição" data-en="Support during transition">Suporte durante a transição</li>
+                    </ul>
                 </div>
-                <div class="solution-card">
+                <div class="solution-card onboarding-card">
                     <div class="solution-icon">
                         <i class="fas fa-headset" style="font-size: 2rem; color: #007bff;"></i>
                     </div>
                     <h3 data-pt="4. Suporte" data-en="4. Support">4. Suporte</h3>
                     <p data-pt="Acompanhamento contínuo, monitoramento e suporte técnico para garantir o sucesso." data-en="Continuous follow-up, monitoring and technical support to ensure success.">Acompanhamento contínuo, monitoramento e suporte técnico para garantir o sucesso.</p>
+                    <ul style="text-align: left; margin: 15px 0; color: #666; font-size: 0.95rem;">
+                        <li data-pt="Monitoramento contínuo 24/7" data-en="24/7 continuous monitoring">Monitoramento contínuo 24/7</li>
+                        <li data-pt="Suporte técnico dedicado" data-en="Dedicated technical support">Suporte técnico dedicado</li>
+                        <li data-pt="Relatórios de performance" data-en="Performance reports">Relatórios de performance</li>
+                        <li data-pt="Manutenção preventiva" data-en="Preventive maintenance">Manutenção preventiva</li>
+                    </ul>
                 </div>
             </div>
         </div>
