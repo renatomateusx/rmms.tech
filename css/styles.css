@@ -306,8 +306,29 @@ nav ul li a:hover:after {
 }
 
 .experience-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+/* Services Columns */
+.services-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.service-column h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.service-column .experience-list {
+    margin: 0;
 }
 
 .experience-list {
@@ -330,6 +351,14 @@ nav ul li a:hover:after {
     height: 10px;
     background-color: var(--primary-color);
     border-radius: 50%;
+}
+
+/* Responsive for services columns */
+@media (max-width: 768px) {
+    .services-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 .expertise-box {
